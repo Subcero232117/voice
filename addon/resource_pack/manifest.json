@@ -1,0 +1,23 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": ["Subcero"],
+		"generated_with": {
+			"SubVoice": "1.0"
+		}
+	},
+	"header": {
+		"name": "SubVoice RP",
+		"description": "Recursos visuales para sistema de voz real SubVoice",
+		"uuid": "ca7258f5-4d0d-4ce1-8987-388f4534330e",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 21, 120]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "b9d4db28-f4a8-4517-a844-d4f92a6346a8",
+			"version": [1, 0, 0]
+		}
+	]
+}

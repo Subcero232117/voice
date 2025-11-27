@@ -1,0 +1,39 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": ["Subcero"],
+		"generated_with": {
+			"SubVoice": "1.0"
+		}
+	},
+	"header": {
+		"name": "SubVoice Addon",
+		"description": "Sistema de Voz Real con TeamV, Mic y WebRTC bridge",
+		"uuid": "be9ab09d-52ec-465c-b604-e71aa1be334d",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 21, 120]
+	},
+	"modules": [
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/main.js",
+			"uuid": "f5f05f46-274f-4bce-a431-7869f091fcbe",
+			"version": [1, 0, 0]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.4.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.3.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-net",
+			"version": "1.0.0-beta"
+		}
+	]
+}

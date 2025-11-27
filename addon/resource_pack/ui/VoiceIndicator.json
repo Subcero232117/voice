@@ -1,0 +1,21 @@
+{
+  "namespace": "SubVoice",
+  "controls": {
+    "voice_icon": {
+      "type": "image",
+      "size": [ 16, 16 ],
+      "texture": "@voice_img",
+      "anchor_from": "bottom_right",
+      "anchor_to": "bottom_right",
+      "offset": [ -5, -40 ]
+    }
+  },
+  "bindings": {
+    "voice_img": {
+      "type": "collection_dynamic",
+      "collection_name": "player",
+      "source": "voice_icon",
+      "fallback": "mic_idle"
+    }
+  }
+}

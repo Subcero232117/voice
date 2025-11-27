@@ -1,0 +1,17 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "subvoice:voice_hud",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/ui/mic_talking"    
+      },
+      "geometry": {
+        "default": "geometry.subvoice.icon"
+      }
+    }
+  }
+}

@@ -1,0 +1,307 @@
+/* ===============================
+   SUBVOICE UI - DARK STYLE
+   =============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Fondo y layout general */
+body {
+    background: #101014;
+    color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 420px) minmax(260px, 360px);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Panel Contenedor */
+.panel-container {
+    background: #181820;
+    padding: 25px 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(0,0,0,.6);
+    border: 1px solid #262626;
+}
+
+/* ESTADO DE CONEXIÓN */
+.connection-status {
+    background: #242424;
+    padding: 12px;
+    border-radius: 8px;
+    color: #8ce6ff;
+    font-size: 17px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Nombre */
+.name-control {
+    margin: 12px 0 18px;
+}
+.name-control label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.name-row {
+    display: flex;
+    gap: 8px;
+}
+#nameInput {
+    flex: 1;
+    background: #1f1f24;
+    border: 1px solid #2f2f36;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #e5e5e5;
+}
+.primary-btn {
+    background: linear-gradient(90deg, #39dfff, #5effc3);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #0c0c10;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .15s, filter .2s;
+}
+.primary-btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.primary-btn:active { transform: translateY(0); filter: brightness(.95); }
+
+/* MIC & TEAM BUTTONS */
+.mic-control, .team-control {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mic-btn, .team-btn {
+    background: #202020;
+    border: 2px solid #515151;
+    padding: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .15s, background .2s;
+}
+
+.mic-btn:hover, .team-btn:hover {
+    background: #2b2b2b;
+    transform: scale(1.07);
+}
+
+.mic-btn img, .team-btn img {
+    width: 38px;
+}
+
+/* Etiquetas */
+.mic-label, .team-label {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #bfbfbf;
+}
+
+/* Volume slider */
+.volume-control {
+    margin-bottom: 20px;
+}
+
+.volume-control label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+#volSlider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #333;
+    outline: none;
+}
+
+#volSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #39dfff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#volSlider::-webkit-slider-thumb:hover {
+    background: #66e8ff;
+}
+
+/* Indicadores de info */
+.info-indicators {
+    background: #141414;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #262626;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: #6e6e6e;
+}
+
+/* =====================================
+   Animación de desconexión
+   ===================================== */
+.blink {
+    animation: blinkAnim 1s infinite;
+}
+
+@keyframes blinkAnim {
+    0%   { opacity: 1; }
+    50%  { opacity: .3; }
+    100% { opacity: 1; }
+}
+
+/* Panel de peers */
+.peers-panel {
+    background: #15151c;
+    border: 1px solid #262636;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 0 30px rgba(0,0,0,.45);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.peers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #242434;
+    padding-bottom: 8px;
+}
+.peers-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+#peersCount {
+    background: #242c34;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+.peers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 460px;
+    overflow-y: auto;
+}
+.peer-card {
+    background: #1c1c24;
+    border: 1px solid #2a2a36;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: center;
+}
+.peer-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.badge {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #444;
+}
+.badge.speaking { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+.badge.muted { background: #ff6b6b; }
+.peer-actions {
+    display: flex;
+    gap: 6px;
+}
+.pill-btn {
+    background: #23232c;
+    border: 1px solid #2f2f3c;
+    color: #dcdcdc;
+    padding: 6px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background .2s, transform .1s;
+}
+.pill-btn:hover { background: #2e2e3a; transform: translateY(-1px); }
+.pill-btn:active { transform: translateY(0); }
+.peer-volume {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+.peer-volume input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #333;
+}
+.peer-volume input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #93ffb8;
+}
+.team-chip {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    background: #2c2c38;
+    border: 1px solid #343444;
+}
+.team-red { background: #3a1c1c; border-color: #ff6b6b; color: #ffcaca; }
+.team-blue { background: #1c263a; border-color: #6bb1ff; color: #c9e2ff; }
+.team-green { background: #1c3a26; border-color: #6bff9d; color: #c8ffd8; }
+.team-yellow { background: #3a361c; border-color: #ffd86b; color: #ffefc8; }
+.team-purple { background: #2f1c3a; border-color: #c06bff; color: #e8c8ff; }
+.team-orange { background: #3a291c; border-color: #ffb46b; color: #ffe2c8; }
+
+@media (max-width: 820px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .peers-panel { order: -1; }
+}
+/* =======================
+   FUTURO HOOK (Proximity)
+   ======================= */   
+/* Aquí se pueden agregar estilos relacionados con la proximidad en el futuro */
+ 

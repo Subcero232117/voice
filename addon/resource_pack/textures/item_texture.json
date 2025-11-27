@@ -1,0 +1,11 @@
+{
+  "resource_pack_name": "SubVoice",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "mic_on":       { "textures": "textures/ui/mic_talking" },
+    "mic_mute":     { "textures": "textures/ui/mic_muted" },
+    "mic_idle":     { "textures": "textures/ui/mic_disabled" },
+    "team":         { "textures": "textures/ui/mic_team" },
+    "team_mute":    { "textures": "textures/ui/mic_team_muted" }
+  }
+}
