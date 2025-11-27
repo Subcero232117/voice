@@ -39,9 +39,9 @@ export async function initMic() {
             audio: {
                 channelCount: 1,
                 sampleRate: 48000,
-                echoCancellation: false,
-                noiseSuppression: false,
-                autoGainControl: false
+                echoCancellation: true,
+                noiseSuppression: true,
+                autoGainControl: true
             },
             video: false
         });

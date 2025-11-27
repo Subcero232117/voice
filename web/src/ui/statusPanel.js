@@ -1,32 +1,67 @@
 /* ======================================
-   SUBVOICE - Status Panel Controller
-   Animación y estado de conexión
+   SUBVOICE - Status Panel Controller (MEJORADO)
+   Control de estado de conexión visual
    ====================================== */
 
 const connStatus = document.getElementById("connStatus");
+const statusDot = connStatus?.querySelector('.status-dot');
+const statusText = connStatus?.querySelector('.status-text');
 
-/* =======================
-   Animación con CSS dinámico
-   ======================= */
-function setBlinking(state) {
-    if (state) {
-        connStatus.classList.add("blink");
-    } else {
-        connStatus.classList.remove("blink");
+let currentState = 'disconnected'; // 'connected', 'disconnected', 'connecting'
+
+/* ==============================
+   Actualizar UI de conexión
+   ============================== */
+function updateConnectionUI(state, message) {
+    if (!connStatus) return;
+    
+    currentState = state;
+    
+    // Remover todas las clases de estado
+    connStatus.classList.remove('connected', 'disconnected', 'connecting');
+    
+    // Añadir clase de estado actual
+    connStatus.classList.add(state);
+    
+    // Actualizar texto
+    if (statusText) {
+        statusText.innerText = message;
     }
+    
+    console.log(`📡 Estado de conexión: ${state} - ${message}`);
 }
 
-/* =======================
-   Actualizar UI desde socket
-   ======================= */
+/* ==============================
+   Estados públicos
+   ============================== */
 export function setConnectedUI() {
-    connStatus.innerText = "🟢 Conectado";
-    connStatus.style.color = "#93ffb8";
-    setBlinking(false);
+    updateConnectionUI('connected', 'Conectado');
 }
 
 export function setDisconnectedUI() {
-    connStatus.innerText = "🔴 Desconectado";
-    connStatus.style.color = "#ff8b8b";
-    setBlinking(true);
+    updateConnectionUI('disconnected', 'Desconectado');
+}
+
+export function setConnectingUI() {
+    updateConnectionUI('connecting', 'Conectando...');
+}
+
+export function setReconnectingUI(attempt, maxAttempts) {
+    const message = `Reconectando (${attempt}/${maxAttempts})...`;
+    updateConnectionUI('connecting', message);
+}
+
+export function setErrorUI(errorMessage) {
+    updateConnectionUI('disconnected', errorMessage || 'Error de conexión');
+}
+
+export function getCurrentState() {
+    return currentState;
+}
+
+/* ==============================
+   Inicializar con estado de carga
+   ============================== */
+if (connStatus) {
+    updateConnectionUI('connecting', 'Iniciando...');
 }
